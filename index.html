@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/components/visibility.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/components/dimmer.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+    <script>
+        $(document)
+            .ready(function () {
+                $('.main.menu').visibility({
+                    type: 'fixed'
+                });
+                $('.overlay').visibility({
+                    type: 'fixed',
+                    offset: 80
+                });
+                $('.ui.menu a.item')
+                    .on('click', function () {
+                        $(this)
+                            .addClass('active')
+                            .siblings()
+                            .removeClass('active')
+                        ;
+                    });
+                $(window).scroll(function () {
+                    var scr = $(window).scrollTop();
+                    if (scr > 5) {
+                        $('#home')
+                            .addClass('active')
+                            .siblings()
+                            .removeClass('active');
+                    }
+                    if (scr > 720) {
+                        $('.menu a').addClass('visible');
+                    }
+                    if (scr < 720) {
+                        $('.menu a').removeClass('visible');
+                    }
+                    $("#header-name").css("opacity", 1 - $(window).scrollTop() / 300);
+                });
+                $("a").on('click', function (event) {
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        $('body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function () {
+                            window.location.hash = hash;
+                        });
+                    }
+                });
+                $('.special.cards .image').dimmer({
+                    on: 'hover'
+                });
+            });
+
+    </script>
+</head>
+<body>
+<div class="ui inverted vertical center aligned segment" id="home">
+    <div class="ui container over-menu">
+        <div class="inverted ui borderless main secondary pointing menu">
+            <a class="item active" href="#home">Welcome</a>
+            <a class="item" href="#about-me">About Me</a>
+            <a class="item" href="#projects">Projects</a>
+            <a class="item" href="#skills">Skills</a>
+            <a class="item" href="#education">Education</a>
+            <a class="item" href="#contact">Contact</a>
+        </div>
+    </div>
+    <div class="ui text container">
+        <h1 class="ui inverted header" id="header-name">
+            Walter Wu
+        </h1>
+    </div>
+</div>
+<div id="about-me">
+    <div class="content-art ui center aligned text container">
+        <h1 class="section-header">Profile</h1>
+    </div>
+    <div class="content-art ui right aligned grid">
+        <div class="left floated right aligned six wide column">
+            <div class="ui text">
+                <h1 class="section-sub">About Me</h1>
+            </div>
+        </div>
+        <div class="right floated left aligned six wide column">
+            <div class="ui text">
+                <h1 class="section-sub">Details</h1>
+                <p><strong>Name</strong></p>
+                <p>Walter Wu</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="projects">
+    <div class="content-art ui center aligned text container">
+        <h1 class="section-header">Projects</h1>
+        <div class="ui special cards">
+            <div class="card">
+                <div class="blurring dimmable image">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <a href="https://github.com/walter090/noir2color"
+                                   target="_blank"
+                                   class="ui inverted button">
+                                    View on Github
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="style/media/leonard-cotte-309285.jpg">
+                </div>
+                <div class="content">
+                    <p class="header proj-header">Noir2Color</p>
+                    <div class="extra content">
+                        <p>
+                            Colorize black and white images using cGAN.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="skills">
+    <div class="content-art ui center aligned text container">
+        <h1 class="section-header">Skills</h1>
+    </div>
+    <div class="content-art ui right aligned grid">
+
+    </div>
+</div>
+<div id="education">
+    <div class="content-art ui center aligned text container">
+        <h1 class="section-header">Education</h1>
+    </div>
+</div>
+<div class="ui inverted vertical footer segment" id="contact">
+    <div class="content-art ui center aligned text container">
+        <h1 class="section-header">Contact</h1>
+    </div>
+</div>
+</body>
+</html>
