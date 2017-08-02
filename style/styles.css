@@ -5,6 +5,19 @@ p {
     margin: 5px;
 }
 
+a {
+    font-family: "Roboto", sans-serif !important;
+}
+
+.card {
+    margin: 15px !important;
+}
+
+.proj-header {
+    font-family: "Muli", sans-serif !important;
+    font-weight: 200 !important;
+}
+
 .visible {
     background-color: black !important;
     opacity: 0.5 !important;
