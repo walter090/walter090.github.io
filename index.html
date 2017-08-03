@@ -63,10 +63,15 @@
                 });
 
                 document.getElementById("age").innerHTML = currentYear - 1994;
+
+                var identicon =  Math.random().toString(30).substring(2);
+                var iconLink = "http://identicon.org?t=" + identicon + "&s=256";
+
+                document.getElementById("tab-icon").setAttribute("href", iconLink);
             });
     </script>
     <title>Walter Wu</title>
-    <link rel="icon" href="favicon.ico">
+    <link id="tab-icon" rel="icon">
 </head>
 <body>
 <div class="ui inverted vertical center aligned segment" id="home">
