@@ -13,6 +13,9 @@
     <script>
         $(document)
             .ready(function () {
+                var height = window.screen.availHeight * 0.9;
+                var currentYear = new Date().getFullYear();
+
                 $('.main.menu').visibility({
                     type: 'fixed'
                 });
@@ -36,10 +39,10 @@
                             .siblings()
                             .removeClass('active');
                     }
-                    if (scr > 760) {
+                    if (scr > height) {
                         $('.menu a').addClass('visible');
                     }
-                    if (scr < 760) {
+                    if (scr < height) {
                         $('.menu a').removeClass('visible');
                     }
                     $("#header-name").css("opacity", 0.8 - $(window).scrollTop() / 300);
@@ -59,7 +62,6 @@
                     on: 'hover'
                 });
 
-                var currentYear = new Date().getFullYear();
                 document.getElementById("age").innerHTML = currentYear - 1994;
             });
     </script>
