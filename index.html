@@ -42,7 +42,7 @@
                     if (scr < 760) {
                         $('.menu a').removeClass('visible');
                     }
-                    $("#header-name").css("opacity", 1 - $(window).scrollTop() / 300);
+                    $("#header-name").css("opacity", 0.8 - $(window).scrollTop() / 300);
                 });
                 $("a").on('click', function (event) {
                     if (this.hash !== "") {

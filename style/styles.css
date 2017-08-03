@@ -55,6 +55,7 @@ a {
     font-family: "Muli", sans-serif !important;
     font-size: 5em !important;
     font-weight: 200 !important;
+    opacity: 0.8;
 }
 
 .section-header {
