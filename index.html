@@ -58,8 +58,10 @@
                 $('.special.cards .image').dimmer({
                     on: 'hover'
                 });
-            });
 
+                var currentYear = new Date().getFullYear();
+                document.getElementById("age").innerHTML = currentYear - 1994;
+            });
     </script>
     <title>Walter Wu</title>
 </head>
@@ -96,6 +98,10 @@
                 <h1 class="section-sub">Details</h1>
                 <p><strong>Name</strong></p>
                 <p>Walter Wu</p>
+                <p><strong>Age</strong></p>
+                <p id="age"></p>
+                <p><strong>Graduated from</strong></p>
+                <p>Stony Brook University</p>
             </div>
         </div>
     </div>
@@ -117,10 +123,13 @@
                             </div>
                         </div>
                     </div>
-                    <img src="style/media/leonard-cotte-309285.jpg">
+                    <img src="style/media/noir.jpg">
                 </div>
                 <div class="content">
-                    <p class="header proj-header">Noir2Color</p>
+                    <span class="header proj-header">Noir2Color</span>
+                    <div class="meta">
+                        <span class="tools">Python, TensorFlow</span>
+                    </div>
                     <div class="extra content">
                         <p>
                             Colorize black and white images using cGAN.
@@ -138,13 +147,21 @@
                                    class="ui inverted button">
                                     Visit Website
                                 </a>
+                                <a href="https://github.com/walter090/fires_plot_web"
+                                   target="_blank"
+                                   class="ui inverted button">
+                                    View on Github
+                                </a>
                             </div>
                         </div>
                     </div>
                     <img src="style/media/onfire.jpg">
                 </div>
                 <div class="content">
-                    <p class="header proj-header">FirePlot</p>
+                    <span class="header proj-header">FirePlot</span>
+                    <div class="meta">
+                        <span class="tools">JavaScript, D3.js</span>
+                    </div>
                     <div class="extra content">
                         <p>
                             Data visualization of forest fire in Montesinho natural park with D3.js
@@ -165,13 +182,43 @@
                             </div>
                         </div>
                     </div>
-                    <img src="style/media/terminal.png">
+                    <img src="style/media/terminal.jpg">
                 </div>
                 <div class="content">
-                    <p class="header proj-header">WebTerminal</p>
+                    <span class="header proj-header">WebTerminal</span>
+                    <div class="meta">
+                        <span class="tools">JavaScript</span>
+                    </div>
                     <div class="extra content">
                         <p>
                             A web browser based linux like terminal
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="blurring dimmable image">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <a href="https://github.com/walter090/image_classification"
+                                   target="_blank"
+                                   class="ui inverted button">
+                                    View on Github
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="style/media/cifar10.jpg">
+                </div>
+                <div class="content">
+                    <span class="header proj-header">Image Classification</span>
+                    <div class="meta">
+                        <span class="tools">Python, TensorFlow</span>
+                    </div>
+                    <div class="extra content">
+                        <p>
+                            Image classification with CIFAR-10 dataset
                         </p>
                     </div>
                 </div>
