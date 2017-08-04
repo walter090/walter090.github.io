@@ -13,8 +13,9 @@
     <script>
         $(document)
             .ready(function () {
-                var height = window.screen.availHeight * 0.9;
-                var projPos = height + 510;
+                var total_height = $(document).height();
+                var view_height = window.screen.availHeight * 0.9;
+                var projPos = view_height + 510;
                 var skillPos = projPos + 1094;
                 var currentYear = new Date().getFullYear();
 
@@ -40,13 +41,13 @@
 //                    });
                 $(window).scroll(function () {
                     var scr = $(window).scrollTop();
-                    if (scr > height) {
+                    if (scr > view_height) {
                         $('#about-me-btn')
                             .addClass('active')
                             .siblings()
                             .removeClass('active');
                     }
-                    if (scr < height) {
+                    if (scr < view_height) {
                         $('#home-btn')
                             .addClass('active')
                             .siblings()
@@ -64,10 +65,10 @@
                             .siblings()
                             .removeClass('active');
                     }
-                    if (scr > height) {
+                    if (scr > view_height) {
                         $('.menu a').addClass('visible');
                     }
-                    if (scr < height) {
+                    if (scr < view_height) {
                         $('.menu a').removeClass('visible');
                     }
                     $("#header-wrap").css("opacity", 0.8 - $(window).scrollTop() / 300);
@@ -142,7 +143,7 @@
 <div id="projects">
     <div class="content-art ui center aligned text container">
         <h1 class="section-header">Projects</h1>
-        <span class="header-exp">What I have been and am working on</span>
+        <span class="header-exp">What I have been working on</span>
         <div class="ui divider"></div>
         <div class="ui special cards">
             <div class="card">
