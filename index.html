@@ -15,8 +15,13 @@
             .ready(function () {
                 var height = window.screen.availHeight * 0.9;
                 var projPos = height + 510;
-
+                var skillPos = projPos + 1094;
                 var currentYear = new Date().getFullYear();
+
+                var identicon = Math.random().toString(30).substring(2);
+                var iconLink = "http://identicon.org?t=" + identicon + "&s=32";
+
+                document.getElementById("tab-icon").setAttribute("href", iconLink);
 
                 $('.main.menu').visibility({
                     type: 'fixed'
@@ -53,13 +58,19 @@
                             .siblings()
                             .removeClass('active');
                     }
+                    if (scr > skillPos) {
+                        $('#skills-btn')
+                            .addClass('active')
+                            .siblings()
+                            .removeClass('active');
+                    }
                     if (scr > height) {
                         $('.menu a').addClass('visible');
                     }
                     if (scr < height) {
                         $('.menu a').removeClass('visible');
                     }
-                    $("#header-name").css("opacity", 0.8 - $(window).scrollTop() / 300);
+                    $("#header-wrap").css("opacity", 0.8 - $(window).scrollTop() / 300);
                 });
                 $("a").on('click', function (event) {
                     if (this.hash !== "") {
@@ -77,11 +88,6 @@
                 });
 
                 document.getElementById("age").innerHTML = currentYear - 1994;
-
-                var identicon =  Math.random().toString(30).substring(2);
-                var iconLink = "http://identicon.org?t=" + identicon + "&s=32";
-
-                document.getElementById("tab-icon").setAttribute("href", iconLink);
             });
     </script>
     <title>Walter Wu</title>
@@ -100,14 +106,18 @@
         </div>
     </div>
     <div class="ui text container">
-        <h1 class="ui inverted header" id="header-name">
-            Walter Wu
-        </h1>
+        <header id="header-wrap">
+            <span id="header-suffix">It's</span>
+            <h1 class="ui inverted header" id="header-name">
+                Walter Wu
+            </h1>
+        </header>
     </div>
 </div>
 <div id="about-me">
     <div class="content-art ui center aligned text container">
         <h1 class="section-header">Profile</h1>
+        <span class="header-exp">Who I am and what I do</span>
         <div class="ui divider"></div>
         <div class="content-art ui right aligned grid">
             <div class="left floated right aligned six wide column">
@@ -132,6 +142,7 @@
 <div id="projects">
     <div class="content-art ui center aligned text container">
         <h1 class="section-header">Projects</h1>
+        <span class="header-exp">What I have been and am working on</span>
         <div class="ui divider"></div>
         <div class="ui special cards">
             <div class="card">
@@ -254,6 +265,68 @@
     <div class="content-art ui center aligned text container">
         <h1 class="section-header">Skills</h1>
         <div class="ui divider"></div>
+        <h1 class="sub-sub">Programming Languages</h1>
+        <div class="content-art ui right aligned grid">
+            <div class="right floated left aligned seven wide column">
+                <div class="ui text skills-list">
+                    <ul>
+                        <li>Python*</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left floated right aligned seven wide column">
+                <div class="ui text skills-list">
+                    <ul>
+                        <li>Java*</li>
+                        <li>C</li>
+                        <li>MIPS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <h1 class="sub-sub">Tools</h1>
+        <div class="content-art ui right aligned grid">
+            <div class="right floated left aligned seven wide column">
+                <div class="ui text skills-list">
+                    <ul>
+                        <li>TensorFlow*</li>
+                        <li>Scikit-learn*</li>
+                        <li>NumPy*</li>
+                        <li>Pandas*</li>
+                        <li>BeautifulSoup</li>
+                        <li>DigitalOcean</li>
+                        <li>Jupyter Notebook*</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left floated right aligned seven wide column">
+                <div class="ui text skills-list">
+                    <ul>
+                        <li>Django</li>
+                        <li>Spring MVC</li>
+                        <li>Heroku</li>
+                        <li>Git*</li>
+                        <li>Linux</li>
+                        <li>PostgreSQL</li>
+                        <li>Scrapy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <footer class="footnote">* Advanced skills</footer>
+        <h1 class="sub-sub">Languages</h1>
+        <div class="content-art ui right aligned grid skills-list">
+            <div class="right floated left aligned seven wide column">
+                English
+            </div>
+            <div class="left floated right aligned seven wide column">
+                Mandarin Chinese
+            </div>
+        </div>
     </div>
 </div>
 <div id="education">

@@ -9,6 +9,43 @@ a {
     font-family: "Roboto", sans-serif !important;
 }
 
+header#header-wrap h1 {
+    display: inline-block;
+}
+
+h1.sub-sub {
+    text-align: left !important;
+    font-family: "Muli", sans-serif !important;
+    font-weight: 200;
+    margin-bottom: -20px;
+}
+
+.footnote {
+    text-align: right !important;
+    font-family: "Roboto", sans-serif !important;
+    font-size: 0.7em;
+}
+
+.skills-list {
+    list-style-type: none;
+    font-family: "Roboto", sans-serif !important;
+    font-size: 1.2em;
+}
+
+.skills-list ul {
+    list-style-type: none;
+    font-family: "Roboto", sans-serif !important;
+    padding-left: 0;
+}
+
+.header-exp {
+    font-family: "Muli", sans-serif !important;
+    font-weight: 200;
+    font-size: 1em;
+    margin-top: -10px;
+    opacity: 0.9;
+}
+
 .ui.cards {
     margin-top: 20px; !important;
 }
@@ -24,7 +61,7 @@ a {
 
 .visible {
     background-color: black !important;
-    opacity: 0.5 !important;
+    opacity: 0.7 !important;
 }
 
 .content-art {
@@ -65,8 +102,15 @@ a {
 
 #header-name {
     font-family: "Muli", sans-serif !important;
-    font-size: 5em !important;
+    font-size: 5.5em !important;
     font-weight: 200 !important;
+    opacity: 0.8;
+}
+
+#header-suffix {
+    font-family: "Muli", sans-serif !important;
+    font-weight: 200 !important;
+    font-size: 1em !important;
     opacity: 0.8;
 }
 
@@ -95,8 +139,11 @@ a {
 
 .menu {
     border-width: 0 !important;
+}
+
+.ui.over-menu a.item {
     font-family: "Muli", sans-serif !important;
-    font-weight: 200 !important;
+    font-weight: 300 !important;
 }
 
 .ui.inverted.vertical.segment {
