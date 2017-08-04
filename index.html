@@ -14,6 +14,8 @@
         $(document)
             .ready(function () {
                 var height = window.screen.availHeight * 0.9;
+                var projPos = height + 510;
+
                 var currentYear = new Date().getFullYear();
 
                 $('.main.menu').visibility({
@@ -23,18 +25,30 @@
                     type: 'fixed',
                     offset: 80
                 });
-                $('.ui.menu a.item')
-                    .on('click', function () {
-                        $(this)
-                            .addClass('active')
-                            .siblings()
-                            .removeClass('active')
-                        ;
-                    });
+//                $('.ui.over-menu a.item')
+//                    .on('click', function () {
+//                        $(this)
+//                            .addClass('active')
+//                            .siblings()
+//                            .removeClass('active')
+//                        ;
+//                    });
                 $(window).scroll(function () {
                     var scr = $(window).scrollTop();
-                    if (scr > 5) {
-                        $('#home')
+                    if (scr > height) {
+                        $('#about-me-btn')
+                            .addClass('active')
+                            .siblings()
+                            .removeClass('active');
+                    }
+                    if (scr < height) {
+                        $('#home-btn')
+                            .addClass('active')
+                            .siblings()
+                            .removeClass('active');
+                    }
+                    if (scr > projPos) {
+                        $('#projects-btn')
                             .addClass('active')
                             .siblings()
                             .removeClass('active');
@@ -77,12 +91,12 @@
 <div class="ui inverted vertical center aligned segment" id="home">
     <div class="ui container over-menu">
         <div class="inverted ui borderless main secondary pointing menu">
-            <a class="item active" href="#home">Welcome</a>
-            <a class="item" href="#about-me">About Me</a>
-            <a class="item" href="#projects">Projects</a>
-            <a class="item" href="#skills">Skills</a>
-            <a class="item" href="#education">Education</a>
-            <a class="item" href="#contact">Contact</a>
+            <a class="item active" href="#home" id="home-btn">Welcome</a>
+            <a class="item" href="#about-me" id="about-me-btn">About Me</a>
+            <a class="item" href="#projects" id="projects-btn">Projects</a>
+            <a class="item" href="#skills" id="skills-btn">Skills</a>
+            <a class="item" href="#education" id="education-btn">Education</a>
+            <a class="item" href="#contact" id="contact-btn">Contact</a>
         </div>
     </div>
     <div class="ui text container">
@@ -239,6 +253,7 @@
 <div id="skills">
     <div class="content-art ui center aligned text container">
         <h1 class="section-header">Skills</h1>
+        <div class="ui divider"></div>
     </div>
 </div>
 <div id="education">
