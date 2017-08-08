@@ -11,6 +11,20 @@ a {
     font-weight: 300;
 }
 
+.field textarea {
+    color: white !important;
+    background-color: #1B1C1D !important;
+    border-color: white !important;
+    border-radius: 0 !important;
+}
+
+.field input {
+    color: white !important;
+    background-color: #1B1C1D !important;
+    border-color: white !important;
+    border-radius: 0 !important;
+}
+
 .message-label {
     font-family: "Roboto", sans-serif !important;
     font-weight: 300 !important;
