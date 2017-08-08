@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/popup.min.js">
-    </script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/form.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/popup.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/components/visibility.min.js">
     </script>
@@ -455,6 +457,22 @@
             </a>
         </div>
         <div class="ui divider"></div>
+        <div class="contact-entry">
+            <h1>Send me a short message</h1>
+            <form class="ui inverted form" method="POST"
+                  action="http://formspree.io/walter.wu090@gmail.com">
+                <div class="field">
+                    <label class="message-label">Email</label>
+                    <input type="email" name="email"
+                           placeholder="Who I should reply to">
+                </div>
+                <div class="field">
+                    <label class="message-label">Message</label>
+                    <textarea name="message" placeholder="Your message"></textarea>
+                </div>
+                <button class="ui inverted big basic button" type="submit">Send</button>
+            </form>
+        </div>
     </div>
 </div>
 </body>

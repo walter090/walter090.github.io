@@ -11,9 +11,24 @@ a {
     font-weight: 300;
 }
 
+.message-label {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 1em !important;
+    text-align: left;
+}
+
 .contact-entry {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 300;
     font-size: 1.1em;
     margin: 15px;
+}
+
+.contact-entry h1 {
+    text-align: left;
+    font-family: "Muli", sans-serif !important;
+    font-weight: 300 !important;
 }
 
 .contact-entry a {
@@ -189,7 +204,7 @@ h1.sub-sub {
 }
 
 .footer {
-    max-height: 70% !important;
+    max-height: 100% !important;
 }
 
 .over-menu .item {
