@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/popup.min.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/components/visibility.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/components/dimmer.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js">
     </script>
     <link rel="stylesheet" type="text/css" href="style/styles.css">
     <script>
@@ -89,7 +94,22 @@
                 });
 
                 document.getElementById("age").innerHTML = currentYear - 1994;
+
+                var clipboard = new Clipboard('.copy');
+                clipboard.on('success', function(e) {
+                    e.clearSelection();
+                });
             });
+        function copied() {
+            document
+                .getElementById('email-address')
+                .setAttribute('data-tooltip', 'Copied');
+        }
+        function resetCopy() {
+            document
+                .getElementById('email-address')
+                .setAttribute('data-tooltip', 'Click to copy');
+        }
     </script>
     <title>Walter Wu</title>
     <link id="tab-icon" rel="icon">
@@ -143,7 +163,7 @@
 <div id="projects">
     <div class="content-art ui center aligned text container">
         <h1 class="section-header">Projects</h1>
-        <span class="header-exp">What I have been working on</span>
+        <span class="header-exp">What I have been working on lately</span>
         <div class="ui divider"></div>
         <div class="ui special cards">
             <div class="card">
@@ -305,7 +325,7 @@
                         <li>Scikit-learn*</li>
                         <li>NumPy*</li>
                         <li>Pandas*</li>
-                        <li>BeautifulSoup</li>
+                        <li>BeautifulSoup*</li>
                         <li>DigitalOcean</li>
                         <li>Jupyter Notebook*</li>
                     </ul>
@@ -341,11 +361,86 @@
 <div id="education">
     <div class="content-art ui center aligned text container">
         <h1 class="section-header">Education</h1>
+        <div class="ui divider"></div>
+        <div class="content-art ui right aligned grid">
+            <div class="edu-sub">
+                <h1>Stony Brook University</h1><span>2012 - 2017</span>
+                <p>Bachelor of Science in Applied Mathematics and Statistics</p>
+                <p>Minor in Computer Science</p>
+            </div>
+        </div>
+        <h1 class="edu-sub-not-inline">Coursework</h1>
+        <div class="content-art ui right aligned grid">
+            <div class="right floated left aligned seven wide column">
+                <div class="ui text skills-list">
+                    <ul>
+                        <li>Software Engineering</li>
+                        <li>Machine Learning</li>
+                        <li>Computer Networks</li>
+                        <li>Artificial Intelligence</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left floated right aligned seven wide column">
+                <div class="ui text skills-list">
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>Computational Geometry</li>
+                        <li>Data Visualization</li>
+                        <li>Analysis of Algorithms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+
+        <div class="content-art ui right aligned grid">
+            <div class="edu-sub">
+                <h1>Udacity</h1><span>2012 - 2017</span>
+                <p>Machine Learning Nanodegree</p>
+            </div>
+            <div class="right floated left aligned seven wide column">
+
+            </div>
+            <div class="left floated right aligned seven wide column">
+
+            </div>
+        </div>
+        <div class="ui divider"></div>
+
+        <div class="content-art ui right aligned grid">
+            <div class="edu-sub">
+                <h1>Coursera</h1><span>2016 - 2017</span>
+                <p>Machine Learning Specification</p>
+            </div>
+            <div class="right floated left aligned seven wide column">
+
+            </div>
+            <div class="left floated right aligned seven wide column">
+
+            </div>
+        </div>
     </div>
 </div>
 <div class="ui inverted vertical footer segment" id="contact">
     <div class="content-art ui center aligned text container">
         <h1 class="section-header">Contact</h1>
+        <div class="ui divider"></div>
+        <div class="contact-entry">
+            <i class="big at icon"></i>
+            <a class="copy"
+               onclick="copied()"
+               onmouseout="resetCopy()"
+               data-clipboard-action="copy"
+               data-clipboard-target="#email-address">
+                <span id="email-address"
+                      data-tooltip="Click to copy">contact@itswalterwu.com</span>
+            </a>
+        </div>
+        <div class="contact-entry">
+            <i class="big github icon"></i>
+            <a href="https://github.com/walter090" target="_blank">github.com/walter090</a>
+        </div>
     </div>
 </div>
 </body>
