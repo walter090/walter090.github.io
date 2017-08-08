@@ -21,11 +21,11 @@
         $(document)
             .ready(function () {
                 var totalHeight = $(document).height();
-                var profilePos = 0.16 * totalHeight;
-                var projectPos = 0.26 * totalHeight;
-                var skillsPos = 0.50 * totalHeight;
-                var educationPos = 0.68 * totalHeight;
-                var contactPos = 0.84 * totalHeight;
+                var profilePos = 0.15 * totalHeight;
+                var projectPos = 0.25 * totalHeight;
+                var skillsPos = 0.49 * totalHeight;
+                var educationPos = 0.67 * totalHeight;
+                var contactPos = 0.83 * totalHeight;
 
 //                var viewHeight = window.screen.availHeight * 0.9;
 //                var projPos = viewHeight + 510;
@@ -90,10 +90,10 @@
                             .siblings()
                             .removeClass('active');
                     }
-                    if (scr > profilePos) {
+                    if (scr > profilePos - 20) {
                         $('.menu a').addClass('visible');
                     }
-                    if (scr < profilePos) {
+                    if (scr < profilePos - 20) {
                         $('.menu a').removeClass('visible');
                     }
                     $("#header-wrap").css("opacity", 0.8 - $(window).scrollTop() / 300);
