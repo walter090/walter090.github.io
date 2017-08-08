@@ -96,18 +96,20 @@
                 document.getElementById("age").innerHTML = currentYear - 1994;
 
                 var clipboard = new Clipboard('.copy');
-                clipboard.on('success', function(e) {
+                clipboard.on('success', function (e) {
                     e.clearSelection();
                 });
             });
-        function copied() {
+
+        function copied(id) {
             document
-                .getElementById('email-address')
+                .getElementById(id)
                 .setAttribute('data-tooltip', 'Copied');
         }
-        function resetCopy() {
+
+        function resetCopy(id) {
             document
-                .getElementById('email-address')
+                .getElementById(id)
                 .setAttribute('data-tooltip', 'Click to copy');
         }
     </script>
@@ -429,8 +431,8 @@
         <div class="contact-entry">
             <i class="big at icon"></i>
             <a class="copy"
-               onclick="copied()"
-               onmouseout="resetCopy()"
+               onclick="copied('email-address')"
+               onmouseout="resetCopy('email-address')"
                data-clipboard-action="copy"
                data-clipboard-target="#email-address">
                 <span id="email-address"
@@ -441,6 +443,18 @@
             <i class="big github icon"></i>
             <a href="https://github.com/walter090" target="_blank">github.com/walter090</a>
         </div>
+        <div class="contact-entry">
+            <i class="big text telephone icon"></i>
+            <a class="copy"
+               onclick="copied('phone')"
+               onmouseout="resetCopy('phone')"
+               data-clipboard-action="copy"
+               data-clipboard-target="#phone">
+                <span id="phone"
+                      data-tooltip="Click to copy">917-392-6547</span>
+            </a>
+        </div>
+        <div class="ui divider"></div>
     </div>
 </div>
 </body>
