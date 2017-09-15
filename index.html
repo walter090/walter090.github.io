@@ -26,12 +26,7 @@
                 var skillsPos = 0.49 * totalHeight;
                 var educationPos = 0.67 * totalHeight;
                 var contactPos = 0.83 * totalHeight;
-
-//                var viewHeight = window.screen.availHeight * 0.9;
-//                var projPos = viewHeight + 510;
-//                var skillPos = projPos + 1094;
                 var currentYear = new Date().getFullYear();
-
                 var identicon = Math.random().toString(30).substring(2);
                 var iconLink = "http://identicon.org?t=" + identicon + "&s=32";
 
@@ -44,14 +39,7 @@
                     type: 'fixed',
                     offset: 80
                 });
-//                $('.ui.over-menu a.item')
-//                    .on('click', function () {
-//                        $(this)
-//                            .addClass('active')
-//                            .siblings()
-//                            .removeClass('active')
-//                        ;
-//                    });
+
                 $(window).scroll(function () {
                     var scr = $(window).scrollTop();
                     if (scr > profilePos) {
@@ -101,22 +89,20 @@
                     }
                     $("#header-wrap").css("opacity", 0.8 - $(window).scrollTop() / 300);
                 });
-                $("a").on('click', function (event) {
-                    if (this.hash !== "") {
-                        event.preventDefault();
-                        var hash = this.hash;
-                        $('body').animate({
-                            scrollTop: $(hash).offset().top
-                        }, 800, function () {
-                            window.location.hash = hash;
-                        });
-                    }
+
+                $(document).on('click', 'a', function (event) {
+                    event.preventDefault();
+
+                    $('html, body').animate({
+                        scrollTop: $($.attr(this, 'href')).offset().top
+                    }, 500);
                 });
+
                 $('.special.cards .image').dimmer({
                     on: 'hover'
                 });
 
-                document.getElementById("age").innerHTML = currentYear - 1994;
+                document.getElementById("age").innerHTML = String(currentYear - 1994);
 
                 var clipboard = new Clipboard('.copy');
                 clipboard.on('success', function (e) {
