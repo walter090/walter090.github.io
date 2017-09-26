@@ -163,8 +163,12 @@ h1.sub-sub {
 }
 
 .visible {
-    background-color: black !important;
-    opacity: 0.7 !important;
+    background-color: white !important;
+    opacity: 0.8 !important;
+}
+
+.visible-inverted {
+    color: white !important;
 }
 
 .content-art {
@@ -191,7 +195,8 @@ h1.sub-sub {
 }
 
 #home {
-    background: url("media/banner_background.jpg") no-repeat fixed center center !important;
+    /*background: url("media/banner_background.jpg") no-repeat fixed center center !important;*/
+    background-color: white;
     background-size: cover !important;
     -webkit-background-size: cover !important;
     -moz-background-size: cover !important;
@@ -208,6 +213,7 @@ h1.sub-sub {
     font-size: 5.5em !important;
     font-weight: 200 !important;
     opacity: 0.8;
+    color: black;
 }
 
 #header-suffix {
@@ -215,6 +221,7 @@ h1.sub-sub {
     font-weight: 200 !important;
     font-size: 1em !important;
     opacity: 0.8;
+    color: black;
 }
 
 .section-header {

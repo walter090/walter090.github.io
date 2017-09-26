@@ -73,19 +73,21 @@
                             .siblings()
                             .removeClass('active');
                     }
-                    if (scr >= contactPos) {
+                    if (scr > contactPos) {
                         $('#contact-btn')
                             .addClass('active')
                             .siblings()
                             .removeClass('active');
                     }
-                    if (scr > profilePos - 20) {
+                    if (scr > contactPos) {
+                        $('.menu a').removeClass('visible').addClass('visible-inverted');
+                    } else {
+                        $('.menu a').addClass('visible').removeClass('visible-inverted');
+                    }
+                    if (scr > profilePos - 20 && scr < contactPos) {
                         $('.menu a').addClass('visible');
                     }
                     if (scr < profilePos - 20) {
-                        $('.menu a').removeClass('visible');
-                    }
-                    if (scr > contactPos) {
                         $('.menu a').removeClass('visible');
                     }
                     $("#header-wrap").css("opacity", 0.8 - $(window).scrollTop() / 300);
@@ -129,7 +131,7 @@
 <body>
 <div class="ui inverted vertical center aligned segment" id="home">
     <div class="ui container over-menu">
-        <div class="inverted ui borderless main secondary pointing menu">
+        <div class="ui borderless main secondary pointing menu">
             <a class="item active" href="#home" id="home-btn">Welcome</a>
             <a class="item" href="#about-me" id="about-me-btn">About Me</a>
             <a class="item" href="#projects" id="projects-btn">Projects</a>
