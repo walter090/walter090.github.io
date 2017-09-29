@@ -90,7 +90,11 @@
                     if (scr < profilePos - 20) {
                         $('.menu a').removeClass('visible');
                     }
-                    $("#header-wrap").css("opacity", 0.8 - $(window).scrollTop() / 300);
+                    $("#header-wrap").css("opacity", 0.8 - $(window).scrollTop() / 400);
+                    $("#about-me").css("opacity", 1 - ($(window).scrollTop() - profilePos) / 300);
+                    $("#projects").css("opacity", 1 - ($(window).scrollTop() - projectPos - 800) / 300);
+                    $("#skills").css("opacity", 1 - ($(window).scrollTop() - skillsPos - 500) / 300);
+                    $("#education").css("opacity", 1 - ($(window).scrollTop() - educationPos - 600) / 300);
                 });
 
                 $(document).on('click', '.item', function (event) {
